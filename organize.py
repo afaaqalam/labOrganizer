@@ -23,17 +23,7 @@ sections = {}
 for sec in args.lab:
 	sections[sec] = args.dest+"/"+sec
 
-if args.src:
-	if not os.path.exists(args.src):
-		print('Incorrect source path')
-		sys.exit()
-else:
-	source = raw_input('Enter source path: ')
-	if not os.path.exists(source):
-		print('Incorrect source path')
-		sys.exit()			
-
-allFiles = os.listdir(os.getcwd())
+allFiles = os.listdir(args.src)
 allFiles = [files for files in allFiles if files.endswith('.py')]
 count = 0
 
